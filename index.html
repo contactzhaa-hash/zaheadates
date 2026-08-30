@@ -1,0 +1,1050 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>زاها للتمور الفاخرة | Zahea Luxury Dates</title>
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            zahea: {
+              black: '#07120D',
+              dark: '#0D2118',
+              emerald: '#163829',
+              gold: '#C5A059',
+              'gold-light': '#E2C889',
+              'gold-dark': '#9A7A38',
+              cream: '#FAF7F2',
+              sand: '#F0E9DF',
+              border: '#E3DACD'
+            }
+          },
+          fontFamily: {
+            arabic: ['Cairo', 'sans-serif'],
+            serif: ['Playfair Display', 'serif'],
+            sans: ['Plus Jakarta Sans', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    body {
+      font-family: 'Cairo', 'Plus Jakarta Sans', sans-serif;
+      background-color: #FAF7F2;
+      color: #0D2118;
+      transition: font-family 0.2s ease;
+    }
+    .en-mode {
+      font-family: 'Plus Jakarta Sans', 'Cairo', sans-serif;
+    }
+    .gold-gradient {
+      background: linear-gradient(135deg, #E2C889 0%, #C5A059 50%, #9A7A38 100%);
+    }
+    .gold-text-gradient {
+      background: linear-gradient(135deg, #E2C889 0%, #C5A059 50%, #9A7A38 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .glass-nav {
+      background: rgba(13, 33, 24, 0.92);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+    }
+    .custom-scrollbar::-webkit-scrollbar {
+      width: 5px;
+    }
+    .custom-scrollbar::-webkit-scrollbar-thumb {
+      background-color: #C5A059;
+      border-radius: 9999px;
+    }
+  </style>
+</head>
+<body class="antialiased selection:bg-zahea-gold selection:text-zahea-dark">
+
+  <!-- TOP ANNOUNCEMENT BAR -->
+  <div class="bg-zahea-black text-zahea-gold-light text-xs py-2 px-4 text-center border-b border-zahea-gold/20 flex items-center justify-center gap-2">
+    <i class="fa-solid fa-crown text-[10px]"></i>
+    <span data-i18n="announcement">شحن مبرد فاخر لكافة مناطق المملكة والخليج العربي — توصيل مجاني للطلبات فوق 350 ر.س</span>
+  </div>
+
+  <!-- NAVIGATION -->
+  <header class="sticky top-0 z-40 glass-nav border-b border-zahea-gold/25 text-white transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      
+      <!-- Brand Logo -->
+      <a href="#" class="flex items-center gap-3 group">
+        <div class="w-10 h-10 rounded-full border border-zahea-gold flex items-center justify-center bg-zahea-dark/80 group-hover:scale-105 transition-transform">
+          <span class="text-zahea-gold font-serif font-bold text-xl">Z</span>
+        </div>
+        <div class="flex flex-col">
+          <span class="text-2xl font-bold tracking-wider gold-text-gradient font-serif">ZAHEA</span>
+          <span class="text-[10px] tracking-widest text-zahea-gold-light -mt-1" data-i18n="brand_subtitle">تمور القصيم الملكية</span>
+        </div>
+      </a>
+
+      <!-- Desktop Navigation Menu -->
+      <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-zahea-sand/90">
+        <a href="#collection" class="hover:text-zahea-gold transition-colors" data-i18n="nav_collection">المجموعات المختارة</a>
+        <a href="#custom-box" class="hover:text-zahea-gold transition-colors" data-i18n="nav_box_builder">صمّم صندوقك</a>
+        <a href="#pillars" class="hover:text-zahea-gold transition-colors" data-i18n="nav_heritage">أصالة القصيم</a>
+        <a href="#vip" class="hover:text-zahea-gold transition-colors" data-i18n="nav_vip">إهداء الشركات</a>
+      </nav>
+
+      <!-- Action Buttons -->
+      <div class="flex items-center gap-3">
+        <!-- Language Switcher -->
+        <button id="lang-toggle" onclick="toggleLanguage()" class="text-xs px-3.5 py-1.5 rounded-full border border-zahea-gold/50 text-zahea-gold-light hover:bg-zahea-gold hover:text-zahea-dark transition-all flex items-center gap-1.5 font-semibold">
+          <i class="fa-solid fa-globe text-[11px]"></i>
+          <span id="lang-label">English</span>
+        </button>
+
+        <!-- Cart Button -->
+        <button onclick="toggleCart()" class="relative p-2 text-zahea-sand hover:text-zahea-gold transition-colors" aria-label="Cart">
+          <i class="fa-solid fa-bag-shopping text-xl"></i>
+          <span id="cart-count" class="absolute -top-1 -right-1 w-5 h-5 bg-zahea-gold text-zahea-black font-bold text-xs rounded-full flex items-center justify-center shadow-md">0</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO SECTION -->
+  <section class="relative min-h-[85vh] bg-zahea-dark text-white flex items-center overflow-hidden">
+    <div class="absolute inset-0 opacity-20 bg-[radial-gradient(#C5A059_1px,transparent_1px)] [background-size:24px_24px]"></div>
+    <div class="absolute -top-40 -left-40 w-96 h-96 bg-zahea-gold/10 rounded-full blur-3xl pointer-events-none"></div>
+    <div class="absolute bottom-0 right-0 w-[500px] h-[500px] bg-zahea-emerald/30 rounded-full blur-3xl pointer-events-none"></div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 relative z-10 w-full grid md:grid-cols-12 gap-12 items-center">
+      
+      <div class="md:col-span-7 space-y-6 text-center md:text-start">
+        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-zahea-gold/40 bg-zahea-emerald/40 text-zahea-gold-light text-xs font-semibold">
+          <i class="fa-regular fa-gem"></i>
+          <span data-i18n="hero_badge">محصول مزارع القصيم الفاخر لعام 2026</span>
+        </div>
+
+        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight tracking-tight">
+          <span class="block" data-i18n="hero_title_1">أصالة نخلة القصيم،</span>
+          <span class="gold-text-gradient font-serif block mt-2" data-i18n="hero_title_2">بأعلى معايير الإهداء الملكي</span>
+        </h1>
+
+        <p class="text-zahea-sand/80 text-base sm:text-lg max-w-xl leading-relaxed" data-i18n="hero_desc">
+          ننتقي لكم حبات السكري المفتل، الصقعي، والمجدول بعناية فائقة حبة بحبة، ونقدمها في صناديق فاخرة مصممة خصيصاً للمناسبات والضيافة الراقية.
+        </p>
+
+        <div class="pt-4 flex flex-col sm:flex-row items-center gap-4 justify-center md:justify-start">
+          <a href="#collection" class="w-full sm:w-auto px-8 py-4 rounded-full gold-gradient text-zahea-black font-bold text-sm tracking-wide shadow-lg hover:shadow-zahea-gold/30 hover:scale-[1.02] active:scale-[0.98] transition-all flex items-center justify-center gap-2">
+            <span data-i18n="hero_cta">تسوق المجموعات الملكية</span>
+            <i class="fa-solid fa-arrow-left text-xs transition-transform rtl:rotate-0 ltr:rotate-180"></i>
+          </a>
+          <a href="#custom-box" class="w-full sm:w-auto px-8 py-4 rounded-full border border-zahea-gold text-zahea-gold-light font-medium text-sm hover:bg-zahea-gold/10 transition-all flex items-center justify-center gap-2">
+            <i class="fa-solid fa-boxes-packing"></i>
+            <span data-i18n="hero_box_cta">ابتكر صندوقك الخاص</span>
+          </a>
+        </div>
+
+        <!-- Metric highlights -->
+        <div class="pt-8 border-t border-zahea-gold/20 grid grid-cols-3 gap-6 max-w-lg">
+          <div>
+            <div class="text-2xl font-bold gold-text-gradient">100%</div>
+            <div class="text-xs text-zahea-sand/70 mt-1" data-i18n="metric_1">مزارع خاصة بالقصيم</div>
+          </div>
+          <div>
+            <div class="text-2xl font-bold gold-text-gradient">3-Stage</div>
+            <div class="text-xs text-zahea-sand/70 mt-1" data-i18n="metric_2">فرز يدوي دقيق</div>
+          </div>
+          <div>
+            <div class="text-2xl font-bold gold-text-gradient">Cold-Chain</div>
+            <div class="text-xs text-zahea-sand/70 mt-1" data-i18n="metric_3">شحن مبرد فوري</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Hero Visual Box -->
+      <div class="md:col-span-5 relative flex justify-center">
+        <div class="relative w-full max-w-md bg-gradient-to-b from-zahea-emerald to-zahea-dark p-6 rounded-3xl border border-zahea-gold/30 shadow-2xl">
+          <div class="aspect-square rounded-2xl overflow-hidden relative bg-zahea-black/60 flex items-center justify-center border border-zahea-gold/20">
+            <div class="text-center p-8 space-y-4">
+              <i class="fa-solid fa-crown text-5xl text-zahea-gold"></i>
+              <div class="text-xl font-bold gold-text-gradient" data-i18n="hero_box_title">صندوق زاهية المفتل الملكي</div>
+              <p class="text-xs text-zahea-sand/70 leading-relaxed" data-i18n="hero_box_sub">تمر سكري فاخر مفرز يدوي حبة بحبة، مصحوب بمكسرات محمصة وشوكولاتة بلجيكية داكنة.</p>
+              <div class="pt-2 text-zahea-gold font-bold text-xl font-serif">195 SAR</div>
+            </div>
+          </div>
+          
+          <div class="mt-4 flex items-center justify-between text-xs text-zahea-gold-light px-2">
+            <span class="flex items-center gap-1.5"><i class="fa-solid fa-check text-zahea-gold"></i> <span data-i18n="hero_pill_1">تغليف مخملي فاخر</span></span>
+            <span class="flex items-center gap-1.5"><i class="fa-solid fa-check text-zahea-gold"></i> <span data-i18n="hero_pill_2">بطاقة إهداء مخصصة</span></span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- VALUE PILLARS -->
+  <section id="pillars" class="py-12 bg-zahea-sand/60 border-y border-zahea-border">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-2 md:grid-cols-4 gap-6">
+      
+      <div class="flex items-center gap-4 p-4 rounded-xl bg-white/80 border border-zahea-border">
+        <div class="w-12 h-12 rounded-full bg-zahea-emerald/10 text-zahea-emerald flex items-center justify-center text-xl shrink-0">
+          <i class="fa-solid fa-seedling"></i>
+        </div>
+        <div>
+          <h4 class="font-bold text-sm text-zahea-dark" data-i18n="pillar_1_title">محصول القصيم الأصيل</h4>
+          <p class="text-xs text-zahea-dark/60 mt-0.5" data-i18n="pillar_1_desc">مباشرة من مزارع بريدة وعنيزة</p>
+        </div>
+      </div>
+
+      <div class="flex items-center gap-4 p-4 rounded-xl bg-white/80 border border-zahea-border">
+        <div class="w-12 h-12 rounded-full bg-zahea-emerald/10 text-zahea-emerald flex items-center justify-center text-xl shrink-0">
+          <i class="fa-solid fa-hand-sparkles"></i>
+        </div>
+        <div>
+          <h4 class="font-bold text-sm text-zahea-dark" data-i18n="pillar_2_title">انتقاء يدوي دقيق</h4>
+          <p class="text-xs text-zahea-dark/60 mt-0.5" data-i18n="pillar_2_desc">حجم متناسق ونقاء لا يضاهى</p>
+        </div>
+      </div>
+
+      <div class="flex items-center gap-4 p-4 rounded-xl bg-white/80 border border-zahea-border">
+        <div class="w-12 h-12 rounded-full bg-zahea-emerald/10 text-zahea-emerald flex items-center justify-center text-xl shrink-0">
+          <i class="fa-solid fa-gift"></i>
+        </div>
+        <div>
+          <h4 class="font-bold text-sm text-zahea-dark" data-i18n="pillar_3_title">إهداء راقٍ ومميز</h4>
+          <p class="text-xs text-zahea-dark/60 mt-0.5" data-i18n="pillar_3_desc">علب مذهبة وبطاقات إهداء خاصة</p>
+        </div>
+      </div>
+
+      <div class="flex items-center gap-4 p-4 rounded-xl bg-white/80 border border-zahea-border">
+        <div class="w-12 h-12 rounded-full bg-zahea-emerald/10 text-zahea-emerald flex items-center justify-center text-xl shrink-0">
+          <i class="fa-solid fa-truck-fast"></i>
+        </div>
+        <div>
+          <h4 class="font-bold text-sm text-zahea-dark" data-i18n="pillar_4_title">شحن مبرد وسريع</h4>
+          <p class="text-xs text-zahea-dark/60 mt-0.5" data-i18n="pillar_4_desc">يحافظ على طراوة ولون التمر</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- SIGNATURE COLLECTION -->
+  <section id="collection" class="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center max-w-2xl mx-auto mb-14 space-y-3">
+      <div class="text-zahea-gold-dark text-xs uppercase font-bold tracking-widest" data-i18n="collection_subtitle">مجموعات التمور الملكية</div>
+      <h2 class="text-3xl sm:text-4xl font-bold text-zahea-dark" data-i18n="collection_title">نخبة اختيارات زاها</h2>
+      <p class="text-sm text-zahea-dark/70" data-i18n="collection_desc">منتجات مختارة تلائم ذائقة أصحاب الفخامة ومناسبات الضيافة الرفيعة</p>
+    </div>
+
+    <!-- Product Grid -->
+    <div id="products-grid" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+      <!-- Injected via JavaScript -->
+    </div>
+  </section>
+
+  <!-- CUSTOM GIFT BOX BUILDER -->
+  <section id="custom-box" class="py-20 bg-zahea-dark text-white border-y border-zahea-gold/30 relative overflow-hidden">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      
+      <div class="text-center max-w-2xl mx-auto mb-12 space-y-3">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-zahea-gold/40 text-zahea-gold-light text-xs font-semibold">
+          <i class="fa-solid fa-wand-magic-sparkles"></i>
+          <span data-i18n="builder_tag">مُصمّم علب الهدايا المخصص</span>
+        </div>
+        <h2 class="text-3xl sm:text-4xl font-bold gold-text-gradient" data-i18n="builder_title">صمّم صندوقك بحسب رغبتك</h2>
+        <p class="text-sm text-zahea-sand/80" data-i18n="builder_desc">اختر حجم العلبة، نوع التمور، والإضافات الخاصة لصنع هدية لا تُنسى</p>
+      </div>
+
+      <div class="grid lg:grid-cols-12 gap-8 items-start">
+        
+        <!-- Controls Column -->
+        <div class="lg:col-span-7 space-y-8 bg-zahea-emerald/30 p-6 sm:p-8 rounded-3xl border border-zahea-gold/20">
+          
+          <!-- Step 1: Box Size -->
+          <div class="space-y-3">
+            <div class="flex items-center justify-between text-sm font-bold text-zahea-gold-light">
+              <span data-i18n="step1_title">1. اختر حجم العلبة الفاخرة</span>
+              <span id="selected-size-label" class="text-xs text-zahea-sand/70">صندوق ملكي (36 حبة)</span>
+            </div>
+            <div class="grid grid-cols-3 gap-3">
+              <button onclick="setBoxSize('small', 95, 'صندوق راقي (12 حبة)', 'Luxury Petite (12 pcs)', this)" class="box-size-btn p-3 rounded-2xl border border-zahea-gold/30 text-center hover:border-zahea-gold transition-all text-xs bg-zahea-dark/60 active:scale-95">
+                <div class="font-bold text-sm mb-1" data-i18n="size_small">12 حبة</div>
+                <div class="text-zahea-gold-light font-semibold">95 SAR</div>
+              </button>
+              <button onclick="setBoxSize('medium', 150, 'صندوق الضيافة (24 حبة)', 'Hospitality Box (24 pcs)', this)" class="box-size-btn p-3 rounded-2xl border border-zahea-gold/30 text-center hover:border-zahea-gold transition-all text-xs bg-zahea-dark/60 active:scale-95">
+                <div class="font-bold text-sm mb-1" data-i18n="size_medium">24 حبة</div>
+                <div class="text-zahea-gold-light font-semibold">150 SAR</div>
+              </button>
+              <button onclick="setBoxSize('large', 220, 'صندوق ملكي (36 حبة)', 'Royal Prestige (36 pcs)', this)" class="box-size-btn active p-3 rounded-2xl border-2 border-zahea-gold bg-zahea-gold/10 text-center transition-all text-xs active:scale-95">
+                <div class="font-bold text-sm mb-1 text-zahea-gold" data-i18n="size_large">36 حبة</div>
+                <div class="text-zahea-gold-light font-semibold">220 SAR</div>
+              </button>
+            </div>
+          </div>
+
+          <!-- Step 2: Date Variety Selection -->
+          <div class="space-y-3">
+            <label class="block text-sm font-bold text-zahea-gold-light" data-i18n="step2_title">2. التشكيلة المفضلة من التمور</label>
+            <div class="grid sm:grid-cols-2 gap-3">
+              <label class="flex items-center gap-3 p-3 rounded-2xl border border-zahea-gold/30 bg-zahea-dark/50 cursor-pointer hover:border-zahea-gold transition-all">
+                <input type="radio" name="date_variety" value="sukkari_royal" checked onchange="updateBoxAssortment()" class="accent-zahea-gold w-4 h-4">
+                <div class="text-xs">
+                  <div class="font-bold text-white" data-i18n="variety_1_name">سكري مفتل ملكي 100%</div>
+                  <div class="text-zahea-sand/60 text-[11px]" data-i18n="variety_1_sub">ذهبي، مقرمش من الأعلى وطري</div>
+                </div>
+              </label>
+
+              <label class="flex items-center gap-3 p-3 rounded-2xl border border-zahea-gold/30 bg-zahea-dark/50 cursor-pointer hover:border-zahea-gold transition-all">
+                <input type="radio" name="date_variety" value="mixed_luxury" onchange="updateBoxAssortment()" class="accent-zahea-gold w-4 h-4">
+                <div class="text-xs">
+                  <div class="font-bold text-white" data-i18n="variety_2_name">تشكيلة زاها المتنوعة</div>
+                  <div class="text-zahea-sand/60 text-[11px]" data-i18n="variety_2_sub">مزيج من السكري، الصقعي، وعجوة المدينة</div>
+                </div>
+              </label>
+
+              <label class="flex items-center gap-3 p-3 rounded-2xl border border-zahea-gold/30 bg-zahea-dark/50 cursor-pointer hover:border-zahea-gold transition-all">
+                <input type="radio" name="date_variety" value="stuffed_nuts" onchange="updateBoxAssortment()" class="accent-zahea-gold w-4 h-4">
+                <div class="text-xs">
+                  <div class="font-bold text-white" data-i18n="variety_3_name">محشي بالمكسرات الفاخرة (+30 ر.س)</div>
+                  <div class="text-zahea-sand/60 text-[11px]" data-i18n="variety_3_sub">فستق حلبي، بيكان محمص، ولوز مكرمل</div>
+                </div>
+              </label>
+
+              <label class="flex items-center gap-3 p-3 rounded-2xl border border-zahea-gold/30 bg-zahea-dark/50 cursor-pointer hover:border-zahea-gold transition-all">
+                <input type="radio" name="date_variety" value="belgian_choco" onchange="updateBoxAssortment()" class="accent-zahea-gold w-4 h-4">
+                <div class="text-xs">
+                  <div class="font-bold text-white" data-i18n="variety_4_name">شوكولاتة بلجيكية فاخرة (+40 ر.س)</div>
+                  <div class="text-zahea-sand/60 text-[11px]" data-i18n="variety_4_sub">تغطية من الشوكولاتة الداكنة ورشة ذهب</div>
+                </div>
+              </label>
+            </div>
+          </div>
+
+          <!-- Step 3: Ribbon & Personal Gift Card -->
+          <div class="space-y-3">
+            <label class="block text-sm font-bold text-zahea-gold-light" data-i18n="step3_title">3. بطاقة الإهداء وشريط التغليف</label>
+            <div class="space-y-3">
+              <input id="gift-card-recipient" type="text" data-i18n-ph="gift_recipient_ph" placeholder="اسم المُهدى إليه (مثال: سعادة الأستاذ خالد)" class="w-full bg-zahea-dark/80 border border-zahea-gold/40 rounded-xl px-4 py-2.5 text-xs text-white placeholder-zahea-sand/40 focus:outline-none focus:border-zahea-gold">
+              <textarea id="gift-card-msg" rows="2" data-i18n-ph="gift_msg_ph" placeholder="اكتب نص الإهداء الخاص بك هنا..." class="w-full bg-zahea-dark/80 border border-zahea-gold/40 rounded-xl px-4 py-2 text-xs text-white placeholder-zahea-sand/40 focus:outline-none focus:border-zahea-gold"></textarea>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Live Summary / Price Card -->
+        <div class="lg:col-span-5 bg-zahea-black p-6 sm:p-8 rounded-3xl border border-zahea-gold sticky top-28 space-y-6 shadow-2xl">
+          <div class="flex items-center justify-between border-b border-zahea-gold/20 pb-4">
+            <h3 class="text-lg font-bold text-white flex items-center gap-2">
+              <i class="fa-solid fa-receipt text-zahea-gold"></i>
+              <span data-i18n="summary_title">تفاصيل الصندوق المخصص</span>
+            </h3>
+            <span class="text-xs px-2.5 py-1 rounded bg-zahea-gold/20 text-zahea-gold-light font-semibold">Custom Order</span>
+          </div>
+
+          <div class="space-y-3 text-xs">
+            <div class="flex justify-between text-zahea-sand/80">
+              <span data-i18n="sum_size">الحجم المحدد:</span>
+              <span id="sum-size-val" class="font-bold text-white">صندوق ملكي (36 حبة)</span>
+            </div>
+            <div class="flex justify-between text-zahea-sand/80">
+              <span data-i18n="sum_variety">التشكيلة:</span>
+              <span id="sum-variety-val" class="font-bold text-white">سكري مفتل ملكي 100%</span>
+            </div>
+            <div class="flex justify-between text-zahea-sand/80">
+              <span data-i18n="sum_packaging">التغليف:</span>
+              <span id="sum-pkg-val" class="font-bold text-zahea-gold">مخملي فاخر + شريط ذهبي</span>
+            </div>
+          </div>
+
+          <div class="border-t border-zahea-gold/20 pt-4 flex items-center justify-between">
+            <span class="text-sm font-semibold text-zahea-sand/90" data-i18n="total_price_label">الإجمالي المقدر:</span>
+            <div class="text-2xl font-bold text-zahea-gold font-serif"><span id="builder-total-price">220</span> SAR</div>
+          </div>
+
+          <button onclick="addCustomBoxToCart()" class="w-full py-4 rounded-full gold-gradient text-zahea-black font-bold text-sm hover:scale-[1.02] active:scale-[0.98] transition-all flex items-center justify-center gap-2 shadow-lg shadow-zahea-gold/20">
+            <i class="fa-solid fa-cart-plus"></i>
+            <span data-i18n="builder_add_cart">إضافة الصندوق المخصص للسلة</span>
+          </button>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- VIP & CORPORATE ORDERS -->
+  <section id="vip" class="py-20 bg-zahea-cream">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="bg-gradient-to-r from-zahea-dark via-zahea-emerald to-zahea-dark rounded-3xl p-8 sm:p-12 text-white border border-zahea-gold/40 shadow-xl grid md:grid-cols-12 gap-8 items-center">
+        
+        <div class="md:col-span-8 space-y-4">
+          <div class="inline-flex items-center gap-2 text-zahea-gold-light text-xs font-semibold uppercase">
+            <i class="fa-solid fa-briefcase"></i>
+            <span data-i18n="vip_badge">خدمة الشركات وكبار الشخصيات</span>
+          </div>
+          <h3 class="text-2xl sm:text-3xl font-bold" data-i18n="vip_title">تجهيز هدايا المؤتمرات والمناسبات الرسمية</h3>
+          <p class="text-zahea-sand/80 text-sm max-w-2xl leading-relaxed" data-i18n="vip_desc">
+            نوفر خدمة طباعة الهوية والشعار على الصناديق المخملية والخشبية مع تخصيص العبارات، وتجهيز كميات كبرى للمؤسسات والوزارات بأعلى درجات الفخامة.
+          </p>
+        </div>
+
+        <div class="md:col-span-4 flex justify-start md:justify-end">
+          <a href="https://wa.me/966500000000?text=مرحباً%20زاها%20للتمور%20-%20أرغب%20في%20طلب%20عرض%20سعر%20لهدايا%20الشركات" target="_blank" class="w-full sm:w-auto px-6 py-3.5 rounded-full border-2 border-zahea-gold bg-zahea-gold text-zahea-black font-bold text-sm hover:bg-transparent hover:text-zahea-gold transition-all text-center flex items-center justify-center gap-2">
+            <i class="fa-brands fa-whatsapp text-lg"></i>
+            <span data-i18n="vip_cta">تواصل مع قسم الـ VIP</span>
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CART SLIDE-OVER DRAWER -->
+  <div id="cart-drawer" class="fixed inset-0 z-50 overflow-hidden pointer-events-none transition-opacity duration-300 opacity-0">
+    <div onclick="toggleCart()" class="absolute inset-0 bg-black/60 backdrop-blur-sm pointer-events-auto"></div>
+    <div class="absolute inset-y-0 ltr:right-0 rtl:left-0 max-w-full flex">
+      <div class="w-screen max-w-md bg-zahea-dark text-white border-l border-zahea-gold/30 shadow-2xl p-6 flex flex-col justify-between pointer-events-auto">
+        
+        <!-- Cart Header -->
+        <div class="flex items-center justify-between border-b border-zahea-gold/20 pb-4">
+          <div class="flex items-center gap-2">
+            <i class="fa-solid fa-bag-shopping text-zahea-gold text-xl"></i>
+            <h3 class="text-lg font-bold" data-i18n="cart_title">حقيبة التسوق</h3>
+          </div>
+          <button onclick="toggleCart()" class="text-zahea-sand hover:text-zahea-gold p-1" aria-label="Close cart">
+            <i class="fa-solid fa-xmark text-xl"></i>
+          </button>
+        </div>
+
+        <!-- Cart Items List -->
+        <div id="cart-items-container" class="my-6 flex-1 overflow-y-auto space-y-4 custom-scrollbar pr-2">
+          <!-- Populated by JS -->
+        </div>
+
+        <!-- Cart Footer -->
+        <div class="border-t border-zahea-gold/20 pt-4 space-y-4">
+          <div class="flex items-center justify-between text-sm">
+            <span class="text-zahea-sand/70" data-i18n="cart_subtotal">المجموع الفرعي:</span>
+            <span id="cart-subtotal-price" class="text-xl font-bold text-zahea-gold font-serif">0 SAR</span>
+          </div>
+
+          <p class="text-[11px] text-zahea-sand/50 text-center" data-i18n="cart_note">الأسعار تشمل ضريبة القيمة المضافة والشحن المبرد متاح</p>
+
+          <button onclick="checkoutViaWhatsApp()" class="w-full py-4 rounded-full gold-gradient text-zahea-black font-bold text-sm hover:scale-[1.01] active:scale-[0.98] transition-all flex items-center justify-center gap-2">
+            <i class="fa-brands fa-whatsapp text-lg"></i>
+            <span data-i18n="cart_checkout">إتمام الطلب المباشر عبر واتساب</span>
+          </button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="bg-zahea-black text-zahea-sand border-t border-zahea-gold/20 py-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-4 gap-8">
+      
+      <div class="space-y-4">
+        <div class="flex items-center gap-3">
+          <div class="w-8 h-8 rounded-full border border-zahea-gold flex items-center justify-center bg-zahea-dark">
+            <span class="text-zahea-gold font-serif font-bold text-sm">Z</span>
+          </div>
+          <span class="text-xl font-bold gold-text-gradient font-serif">ZAHEA</span>
+        </div>
+        <p class="text-xs text-zahea-sand/70 leading-relaxed" data-i18n="footer_about">
+          علامة سعودية رائدة متخصصة في تمور القصيم الفاخرة، تجمع بين أصالة الزراعة النجدية وأرقى مفاهيم التقديم والهدايا.
+        </p>
+      </div>
+
+      <div>
+        <h4 class="text-sm font-bold text-white mb-3" data-i18n="footer_links_title">روابط سريعة</h4>
+        <ul class="space-y-2 text-xs text-zahea-sand/70">
+          <li><a href="#collection" class="hover:text-zahea-gold" data-i18n="footer_link_1">تمور سكري القصيم</a></li>
+          <li><a href="#collection" class="hover:text-zahea-gold" data-i18n="footer_link_2">صناديق التمور المحشوة</a></li>
+          <li><a href="#custom-box" class="hover:text-zahea-gold" data-i18n="footer_link_3">تصميم صندوق هدايا</a></li>
+          <li><a href="#vip" class="hover:text-zahea-gold" data-i18n="footer_link_4">طلبات الشركات والجملة</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="text-sm font-bold text-white mb-3" data-i18n="footer_contact_title">المقر والتواصل</h4>
+        <ul class="space-y-2 text-xs text-zahea-sand/70">
+          <li><i class="fa-solid fa-location-dot text-zahea-gold ml-2"></i> <span data-i18n="footer_location">بريدة، منطقة القصيم، المملكة العربية السعودية</span></li>
+          <li><i class="fa-solid fa-envelope text-zahea-gold ml-2"></i> concierge@zahea.sa</li>
+          <li><i class="fa-solid fa-phone text-zahea-gold ml-2"></i> +966 50 000 0000</li>
+        </ul>
+      </div>
+
+      <div class="space-y-3">
+        <h4 class="text-sm font-bold text-white mb-2" data-i18n="footer_pay_title">طرق الدفع والشحن</h4>
+        <div class="flex gap-3 text-xl text-zahea-gold-light">
+          <i class="fa-brands fa-cc-visa"></i>
+          <i class="fa-brands fa-cc-mastercard"></i>
+          <i class="fa-brands fa-cc-apple-pay"></i>
+        </div>
+        <p class="text-[11px] text-zahea-sand/50" data-i18n="footer_cr">سجل تجاري معتمد ومرخص من وزارة التجارة</p>
+      </div>
+
+    </div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-12 pt-6 border-t border-zahea-gold/10 text-center text-xs text-zahea-sand/50" data-i18n="footer_copy">
+      © 2026 Zahea Luxury Dates. All rights reserved. زاها للتمور الفاخرة.
+    </div>
+  </footer>
+
+  <!-- JAVASCRIPT ENGINE -->
+  <script>
+    // PRODUCT CATALOG DATA
+    const products = [
+      {
+        id: 1,
+        name_ar: "صندوق السكري المفتل الملكي",
+        name_en: "Royal Sukkari Mufattal Box",
+        desc_ar: "حبات منتقاة يدويًا من نخبة مزارع القصيم، طعم كراميلي معتدل الحلاوة وقوام مقرمش وطري.",
+        desc_en: "Hand-selected prime dates from Al-Qassim groves with a crisp golden crown and rich caramel finish.",
+        price: 185,
+        weight: "1.2 KG",
+        tag_ar: "الأكثر طلبًا",
+        tag_en: "Bestseller",
+        icon: "fa-crown"
+      },
+      {
+        id: 2,
+        name_ar: "صندوق الصقعي المحشو باللوز والهيل",
+        name_en: "Stuffed Sagai with Almonds & Cardamom",
+        desc_ar: "تمر صقعي فاخر محشو باللوز المحمص ونكهة الهيل النجدي الأصيل لضيافة استثنائية.",
+        desc_en: "Premium Sagai dates generously stuffed with roasted almonds and authentic Najdi cardamom.",
+        price: 210,
+        weight: "1.0 KG",
+        tag_ar: "ضيافة ملكية",
+        tag_en: "VIP Reserve",
+        icon: "fa-gem"
+      },
+      {
+        id: 3,
+        name_ar: "مجدول بلاتينيوم بالشوكولاتة البلجيكية",
+        name_en: "Platinum Medjool in Belgian Chocolate",
+        desc_ar: "حبات المجدول العملاقة مغمسة بالشوكولاتة الداكنة (70%) مع لمسات من رقائق الذهب.",
+        desc_en: "Jumbo Medjool dates enveloped in 70% dark Belgian chocolate with edible gold accents.",
+        price: 260,
+        weight: "900g",
+        tag_ar: "إصدار محدود",
+        tag_en: "Limited Edition",
+        icon: "fa-star"
+      },
+      {
+        id: 4,
+        name_ar: "عجوة المدينة العالية (فاخرة)",
+        name_en: "Aliyat Madinah Ajwa (Premium)",
+        desc_ar: "عجوة نقية ومختارة بعناية، حبة سوداء ناعمة غنية بالفوائد والبركة من عوالي المدينة.",
+        desc_en: "Authentic dark soft Ajwa dates harvested from the historically revered high groves.",
+        price: 195,
+        weight: "1.0 KG",
+        tag_ar: "مباركة ونقية",
+        tag_en: "Heritage",
+        icon: "fa-moon"
+      },
+      {
+        id: 5,
+        name_ar: "صينية الضيافة الماسية (مشكل فاخر)",
+        name_en: "Diamond Hospitality Platter",
+        desc_ar: "صينية معدنية مذهبة تحتوي على 48 حبة مشكلة من أرقى أصناف التمور والمحشيات الفاخرة.",
+        desc_en: "Gilded serving tray featuring 48 assorted luxury stuffed and chocolate-coated dates.",
+        price: 340,
+        weight: "1.8 KG",
+        tag_ar: "للمناسبات الكبرى",
+        tag_en: "Grand Celebrations",
+        icon: "fa-champagne-glasses"
+      },
+      {
+        id: 6,
+        name_ar: "دبس السكري الطبيعي الفاخر",
+        name_en: "Pure Sukkari Date Molasses",
+        desc_ar: "مستخلص نقي 100% بدون أي سكر مضاف، كثافة غنية تناسب القهوة والحلويات والطهي.",
+        desc_en: "100% natural, additive-free date molasses extracted from top-grade Sukkari harvest.",
+        price: 75,
+        weight: "500 ml",
+        tag_ar: "طبيعي 100%",
+        tag_en: "Pure Harvest",
+        icon: "fa-jar"
+      }
+    ];
+
+    // COMPLETE I18N DICTIONARY
+    const translations = {
+      ar: {
+        announcement: "شحن مبرد فاخر لكافة مناطق المملكة والخليج العربي — توصيل مجاني للطلبات فوق 350 ر.س",
+        brand_subtitle: "تمور القصيم الملكية",
+        nav_collection: "المجموعات المختارة",
+        nav_box_builder: "صمّم صندوقك",
+        nav_heritage: "أصالة القصيم",
+        nav_vip: "إهداء الشركات",
+        hero_badge: "محصول مزارع القصيم الفاخر لعام 2026",
+        hero_title_1: "أصالة نخلة القصيم،",
+        hero_title_2: "بأعلى معايير الإهداء الملكي",
+        hero_desc: "ننتقي لكم حبات السكري المفتل، الصقعي، والمجدول بعناية فائقة حبة بحبة، ونقدمها في صناديق فاخرة مصممة خصيصاً للمناسبات والضيافة الراقية.",
+        hero_cta: "تسوق المجموعات الملكية",
+        hero_box_cta: "ابتكر صندوقك الخاص",
+        metric_1: "مزارع خاصة بالقصيم",
+        metric_2: "فرز يدوي دقيق",
+        metric_3: "شحن مبرد فوري",
+        hero_box_title: "صندوق زاهية المفتل الملكي",
+        hero_box_sub: "تمر سكري فاخر مفرز يدوي حبة بحبة، مصحوب بمكسرات محمصة وشوكولاتة بلجيكية داكنة.",
+        hero_pill_1: "تغليف مخملي فاخر",
+        hero_pill_2: "بطاقة إهداء مخصصة",
+        pillar_1_title: "محصول القصيم الأصيل",
+        pillar_1_desc: "مباشرة من مزارع بريدة وعنيزة",
+        pillar_2_title: "انتقاء يدوي دقيق",
+        pillar_2_desc: "حجم متناسق ونقاء لا يضاهى",
+        pillar_3_title: "إهداء راقٍ ومميز",
+        pillar_3_desc: "علب مذهبة وبطاقات إهداء خاصة",
+        pillar_4_title: "شحن مبرد وسريع",
+        pillar_4_desc: "يحافظ على طراوة ولون التمر",
+        collection_subtitle: "مجموعات التمور الملكية",
+        collection_title: "نخبة اختيارات زاها",
+        collection_desc: "منتجات مختارة تلائم ذائقة أصحاب الفخامة ومناسبات الضيافة الرفيعة",
+        builder_tag: "مُصمّم علب الهدايا المخصص",
+        builder_title: "صمّم صندوقك بحسب رغبتك",
+        builder_desc: "اختر حجم العلبة، نوع التمور، والإضافات الخاصة لصنع هدية لا تُنسى",
+        step1_title: "1. اختر حجم العلبة الفاخرة",
+        step2_title: "2. التشكيلة المفضلة من التمور",
+        step3_title: "3. بطاقة الإهداء وشريط التغليف",
+        size_small: "12 حبة",
+        size_medium: "24 حبة",
+        size_large: "36 حبة",
+        variety_1_name: "سكري مفتل ملكي 100%",
+        variety_1_sub: "ذهبي، مقرمش من الأعلى وطري",
+        variety_2_name: "تشكيلة زاها المتنوعة",
+        variety_2_sub: "مزيج من السكري، الصقعي، وعجوة المدينة",
+        variety_3_name: "محشي بالمكسرات الفاخرة (+30 ر.س)",
+        variety_3_sub: "فستق حلبي، بيكان محمص، ولوز مكرمل",
+        variety_4_name: "شوكولاتة بلجيكية فاخرة (+40 ر.س)",
+        variety_4_sub: "تغطية من الشوكولاتة الداكنة ورشة ذهب",
+        gift_recipient_ph: "اسم المُهدى إليه (مثال: سعادة الأستاذ خالد)",
+        gift_msg_ph: "اكتب نص الإهداء الخاص بك هنا...",
+        summary_title: "تفاصيل الصندوق المخصص",
+        sum_size: "الحجم المحدد:",
+        sum_variety: "التشكيلة:",
+        sum_packaging: "التغليف:",
+        pkg_desc: "مخملي فاخر + شريط ذهبي",
+        total_price_label: "الإجمالي المقدر:",
+        builder_add_cart: "إضافة الصندوق المخصص للسلة",
+        vip_badge: "خدمة الشركات وكبار الشخصيات",
+        vip_title: "تجهيز هدايا المؤتمرات والمناسبات الرسمية",
+        vip_desc: "نوفر خدمة طباعة الهوية والشعار على الصناديق المخملية والخشبية مع تخصيص العبارات، وتجهيز كميات كبرى للمؤسسات والوزارات بأعلى درجات الفخامة.",
+        vip_cta: "تواصل مع قسم الـ VIP",
+        cart_title: "حقيبة التسوق",
+        cart_subtotal: "المجموع الفرعي:",
+        cart_note: "الأسعار تشمل ضريبة القيمة المضافة والشحن المبرد متاح",
+        cart_checkout: "إتمام الطلب المباشر عبر واتساب",
+        footer_about: "علامة سعودية رائدة متخصصة في تمور القصيم الفاخرة، تجمع بين أصالة الزراعة النجدية وأرقى مفاهيم التقديم والهدايا.",
+        footer_links_title: "روابط سريعة",
+        footer_link_1: "تمور سكري القصيم",
+        footer_link_2: "صناديق التمور المحشوة",
+        footer_link_3: "تصميم صندوق هدايا",
+        footer_link_4: "طلبات الشركات والجملة",
+        footer_contact_title: "المقر والتواصل",
+        footer_location: "بريدة، منطقة القصيم، المملكة العربية السعودية",
+        footer_pay_title: "طرق الدفع والشحن",
+        footer_cr: "سجل تجاري معتمد ومرخص من وزارة التجارة",
+        footer_copy: "© 2026 Zahea Luxury Dates. All rights reserved. زاها للتمور الفاخرة."
+      },
+      en: {
+        announcement: "Luxury refrigerated delivery across Saudi Arabia & GCC — Complimentary on orders over 350 SAR",
+        brand_subtitle: "Royal Al-Qassim Dates",
+        nav_collection: "Curated Collections",
+        nav_box_builder: "Box Builder",
+        nav_heritage: "Heritage",
+        nav_vip: "Corporate Gifting",
+        hero_badge: "Prime 2026 Al-Qassim Harvest",
+        hero_title_1: "The Heritage of Al-Qassim,",
+        hero_title_2: "Crafted for Royal Gifting",
+        hero_desc: "We hand-select each Sukkari, Sagai, and Medjool date from private groves, presenting them in bespoke velvet and gilded boxes for distinguished hospitality.",
+        hero_cta: "Shop Royal Collection",
+        hero_box_cta: "Build Custom Box",
+        metric_1: "Private Qassim Groves",
+        metric_2: "Hand-Graded Quality",
+        metric_3: "Cold-Chain Logistics",
+        hero_box_title: "Royal Sukkari Prestige Box",
+        hero_box_sub: "Hand-sorted Sukkari Mufattal paired with roasted nuts and fine Belgian dark chocolate.",
+        hero_pill_1: "Luxury Velvet Casing",
+        hero_pill_2: "Custom Gifting Note",
+        pillar_1_title: "Authentic Qassim Harvest",
+        pillar_1_desc: "Direct from Buraidah & Unaizah groves",
+        pillar_2_title: "3-Stage Hand Sorting",
+        pillar_2_desc: "Flawless caliber and uniform texture",
+        pillar_3_title: "Prestige Packaging",
+        pillar_3_desc: "Embossed cases with personalized notes",
+        pillar_4_title: "Cold-Chain Express",
+        pillar_4_desc: "Preserving optimal freshness & color",
+        collection_subtitle: "Exclusive Selections",
+        collection_title: "Zahea Signature Range",
+        collection_desc: "Curated luxury dates tailored for refined palates and grand occasions",
+        builder_tag: "Custom Gift Box Studio",
+        builder_title: "Design Your Bespoke Box",
+        builder_desc: "Select box caliber, date varieties, and personalized messaging for a memorable gift",
+        step1_title: "1. Select Box Caliber",
+        step2_title: "2. Date Variety & Fillings",
+        step3_title: "3. Gift Note & Custom Ribbon",
+        size_small: "12 Pieces",
+        size_medium: "24 Pieces",
+        size_large: "36 Pieces",
+        variety_1_name: "100% Royal Sukkari Mufattal",
+        variety_1_sub: "Crisp golden crown with tender base",
+        variety_2_name: "Zahea Assorted Medley",
+        variety_2_sub: "Blend of Sukkari, Sagai, and Madinah Ajwa",
+        variety_3_name: "Stuffed with Roasted Nuts (+30 SAR)",
+        variety_3_sub: "Pistachio, roasted pecan, caramelized almond",
+        variety_4_name: "Belgian Chocolate Glaze (+40 SAR)",
+        variety_4_sub: "70% dark chocolate with edible gold accents",
+        gift_recipient_ph: "Recipient's Name (e.g., Mr. Khalid Al-Mansoor)",
+        gift_msg_ph: "Write your personalized gift message here...",
+        summary_title: "Custom Box Summary",
+        sum_size: "Selected Size:",
+        sum_variety: "Assortment:",
+        sum_packaging: "Presentation:",
+        pkg_desc: "Luxury Velvet + Gold Ribbon",
+        total_price_label: "Estimated Total:",
+        builder_add_cart: "Add Custom Box to Bag",
+        vip_badge: "VIP & Corporate Concierge",
+        vip_title: "Executive Gifts & Official Banquets",
+        vip_desc: "We offer custom logo debossing on velvet and wood cases, tailor-made sleeves, and fulfillment for ministries and corporate milestones.",
+        vip_cta: "Contact VIP Concierge",
+        cart_title: "Shopping Bag",
+        cart_subtotal: "Subtotal:",
+        cart_note: "Prices include VAT. Temperature-controlled delivery applied.",
+        cart_checkout: "Complete Order via WhatsApp",
+        footer_about: "A leading Saudi luxury brand specializing in Al-Qassim dates, merging authentic Najdi heritage with prestigious gifting standards.",
+        footer_links_title: "Quick Links",
+        footer_link_1: "Qassim Sukkari Dates",
+        footer_link_2: "Stuffed Luxury Boxes",
+        footer_link_3: "Custom Gift Builder",
+        footer_link_4: "Corporate & Wholesale",
+        footer_contact_title: "Location & Inquiries",
+        footer_location: "Buraidah, Al-Qassim Province, Saudi Arabia",
+        footer_pay_title: "Payment & Logistics",
+        footer_cr: "Licensed & Certified by Ministry of Commerce",
+        footer_copy: "© 2026 Zahea Luxury Dates. All rights reserved."
+      }
+    };
+
+    // APPLICATION STATE
+    let currentLang = 'ar';
+    let cart = [];
+    
+    let customBoxState = {
+      sizeKey: 'large',
+      sizePrice: 220,
+      sizeNameAr: 'صندوق ملكي (36 حبة)',
+      sizeNameEn: 'Royal Prestige (36 pcs)',
+      varietyKey: 'sukkari_royal',
+      varietyExtraPrice: 0,
+      varietyNameAr: 'سكري مفتل ملكي 100%',
+      varietyNameEn: '100% Royal Sukkari Mufattal'
+    };
+
+    // BOOTSTRAP
+    document.addEventListener('DOMContentLoaded', () => {
+      renderProducts();
+      updateBuilderSummary();
+    });
+
+    // RENDER PRODUCTS
+    function renderProducts() {
+      const grid = document.getElementById('products-grid');
+      grid.innerHTML = products.map(p => {
+        const name = currentLang === 'ar' ? p.name_ar : p.name_en;
+        const desc = currentLang === 'ar' ? p.desc_ar : p.desc_en;
+        const tag = currentLang === 'ar' ? p.tag_ar : p.tag_en;
+        const addLabel = currentLang === 'ar' ? 'إضافة للحقيبة' : 'Add to Bag';
+
+        return `
+          <div class="bg-white rounded-3xl p-6 border border-zahea-border shadow-sm hover:shadow-xl hover:border-zahea-gold/60 transition-all duration-300 flex flex-col justify-between group">
+            <div>
+              <div class="aspect-[4/3] rounded-2xl bg-gradient-to-br from-zahea-dark to-zahea-emerald p-6 flex flex-col justify-between text-white relative overflow-hidden mb-6">
+                <div class="flex justify-between items-start z-10">
+                  <span class="text-[11px] font-bold px-3 py-1 rounded-full bg-zahea-gold text-zahea-black shadow-sm">${tag}</span>
+                  <div class="w-8 h-8 rounded-full bg-white/10 backdrop-blur-md flex items-center justify-center text-zahea-gold">
+                    <i class="fa-solid ${p.icon}"></i>
+                  </div>
+                </div>
+                <div class="z-10">
+                  <span class="text-xs text-zahea-gold-light tracking-wider font-semibold">${p.weight}</span>
+                  <div class="text-2xl font-bold font-serif gold-text-gradient">${p.price} SAR</div>
+                </div>
+                <div class="absolute -right-6 -bottom-6 w-32 h-32 bg-zahea-gold/10 rounded-full blur-2xl"></div>
+              </div>
+
+              <h3 class="text-lg font-bold text-zahea-dark mb-2">${name}</h3>
+              <p class="text-xs text-zahea-dark/70 leading-relaxed line-clamp-2">${desc}</p>
+            </div>
+
+            <div class="pt-6 mt-4 border-t border-zahea-border/60 flex items-center justify-between">
+              <span class="text-base font-bold text-zahea-emerald font-serif">${p.price} SAR</span>
+              <button onclick="addToCart(${p.id})" class="px-4 py-2 rounded-full border border-zahea-gold text-zahea-dark font-semibold text-xs hover:bg-zahea-gold hover:text-white transition-all flex items-center gap-1.5 active:scale-95">
+                <i class="fa-solid fa-plus text-[10px]"></i>
+                <span>${addLabel}</span>
+              </button>
+            </div>
+          </div>
+        `;
+      }).join('');
+    }
+
+    // FULL ROBUST LANGUAGE TOGGLER
+    function toggleLanguage() {
+      currentLang = currentLang === 'ar' ? 'en' : 'ar';
+      
+      const html = document.documentElement;
+      const langLabel = document.getElementById('lang-label');
+      
+      if (currentLang === 'en') {
+        html.setAttribute('lang', 'en');
+        html.setAttribute('dir', 'ltr');
+        document.body.classList.add('en-mode');
+        langLabel.innerText = 'العربية';
+      } else {
+        html.setAttribute('lang', 'ar');
+        html.setAttribute('dir', 'rtl');
+        document.body.classList.remove('en-mode');
+        langLabel.innerText = 'English';
+      }
+
+      // Update all data-i18n text nodes
+      document.querySelectorAll('[data-i18n]').forEach(el => {
+        const key = el.getAttribute('data-i18n');
+        if (translations[currentLang] && translations[currentLang][key]) {
+          el.innerText = translations[currentLang][key];
+        }
+      });
+
+      // Update placeholders
+      document.querySelectorAll('[data-i18n-ph]').forEach(el => {
+        const key = el.getAttribute('data-i18n-ph');
+        if (translations[currentLang] && translations[currentLang][key]) {
+          el.setAttribute('placeholder', translations[currentLang][key]);
+        }
+      });
+
+      renderProducts();
+      updateBuilderSummary();
+      renderCart();
+    }
+
+    // BOX BUILDER CONTROLS
+    function setBoxSize(key, price, nameAr, nameEn, element) {
+      customBoxState.sizeKey = key;
+      customBoxState.sizePrice = price;
+      customBoxState.sizeNameAr = nameAr;
+      customBoxState.sizeNameEn = nameEn;
+
+      document.querySelectorAll('.box-size-btn').forEach(btn => {
+        btn.classList.remove('active', 'border-2', 'border-zahea-gold', 'bg-zahea-gold/10');
+        btn.classList.add('border-zahea-gold/30', 'bg-zahea-dark/60');
+      });
+
+      if (element) {
+        element.classList.add('active', 'border-2', 'border-zahea-gold', 'bg-zahea-gold/10');
+        element.classList.remove('border-zahea-gold/30', 'bg-zahea-dark/60');
+      }
+
+      updateBuilderSummary();
+    }
+
+    function updateBoxAssortment() {
+      const selected = document.querySelector('input[name="date_variety"]:checked').value;
+      customBoxState.varietyKey = selected;
+
+      switch(selected) {
+        case 'sukkari_royal':
+          customBoxState.varietyExtraPrice = 0;
+          customBoxState.varietyNameAr = 'سكري مفتل ملكي 100%';
+          customBoxState.varietyNameEn = '100% Royal Sukkari Mufattal';
+          break;
+        case 'mixed_luxury':
+          customBoxState.varietyExtraPrice = 0;
+          customBoxState.varietyNameAr = 'تشكيلة زاها المتنوعة';
+          customBoxState.varietyNameEn = 'Zahea Assorted Medley';
+          break;
+        case 'stuffed_nuts':
+          customBoxState.varietyExtraPrice = 30;
+          customBoxState.varietyNameAr = 'محشي بالمكسرات الفاخرة';
+          customBoxState.varietyNameEn = 'Stuffed with Roasted Nuts';
+          break;
+        case 'belgian_choco':
+          customBoxState.varietyExtraPrice = 40;
+          customBoxState.varietyNameAr = 'شوكولاتة بلجيكية فاخرة';
+          customBoxState.varietyNameEn = 'Belgian Chocolate Glaze';
+          break;
+      }
+
+      updateBuilderSummary();
+    }
+
+    function updateBuilderSummary() {
+      const total = customBoxState.sizePrice + customBoxState.varietyExtraPrice;
+      document.getElementById('builder-total-price').innerText = total;
+
+      const sizeLabel = currentLang === 'ar' ? customBoxState.sizeNameAr : customBoxState.sizeNameEn;
+      const varietyLabel = currentLang === 'ar' ? customBoxState.varietyNameAr : customBoxState.varietyNameEn;
+
+      document.getElementById('sum-size-val').innerText = sizeLabel;
+      document.getElementById('sum-variety-val').innerText = varietyLabel;
+      document.getElementById('selected-size-label').innerText = sizeLabel;
+      document.getElementById('sum-pkg-val').innerText = translations[currentLang].pkg_desc;
+    }
+
+    // CART OPERATIONS
+    function toggleCart() {
+      const drawer = document.getElementById('cart-drawer');
+      const isHidden = drawer.classList.contains('opacity-0');
+      if (isHidden) {
+        drawer.classList.remove('opacity-0', 'pointer-events-none');
+      } else {
+        drawer.classList.add('opacity-0', 'pointer-events-none');
+      }
+    }
+
+    function addToCart(productId) {
+      const product = products.find(p => p.id === productId);
+      if (!product) return;
+
+      const existing = cart.find(item => item.id === productId && !item.isCustom);
+      if (existing) {
+        existing.qty += 1;
+      } else {
+        cart.push({
+          id: product.id,
+          name_ar: product.name_ar,
+          name_en: product.name_en,
+          price: product.price,
+          qty: 1,
+          isCustom: false
+        });
+      }
+
+      updateCartBadge();
+      renderCart();
+      toggleCart();
+    }
+
+    function addCustomBoxToCart() {
+      const totalCustomPrice = customBoxState.sizePrice + customBoxState.varietyExtraPrice;
+      const recipient = document.getElementById('gift-card-recipient').value.trim();
+      const message = document.getElementById('gift-card-msg').value.trim();
+      
+      const sizeTitle = currentLang === 'ar' ? customBoxState.sizeNameAr : customBoxState.sizeNameEn;
+      const varietyTitle = currentLang === 'ar' ? customBoxState.varietyNameAr : customBoxState.varietyNameEn;
+
+      cart.push({
+        id: Date.now(),
+        name_ar: `صندوق مخصص (${sizeTitle})`,
+        name_en: `Custom Box (${sizeTitle})`,
+        details: `${varietyTitle}${recipient ? ' | ' + (currentLang === 'ar' ? 'للمكرم: ' : 'To: ') + recipient : ''}${message ? ' | ' + (currentLang === 'ar' ? 'إهداء: ' : 'Msg: ') + message : ''}`,
+        price: totalCustomPrice,
+        qty: 1,
+        isCustom: true
+      });
+
+      updateCartBadge();
+      renderCart();
+      toggleCart();
+    }
+
+    function updateCartBadge() {
+      const count = cart.reduce((acc, item) => acc + item.qty, 0);
+      document.getElementById('cart-count').innerText = count;
+    }
+
+    function renderCart() {
+      const container = document.getElementById('cart-items-container');
+      const subtotalEl = document.getElementById('cart-subtotal-price');
+
+      if (cart.length === 0) {
+        container.innerHTML = `
+          <div class="text-center py-12 text-zahea-sand/60 space-y-3">
+            <i class="fa-solid fa-basket-shopping text-4xl text-zahea-gold/40"></i>
+            <p class="text-xs">${currentLang === 'ar' ? 'حقيبة التسوق فارغة حالياً' : 'Your shopping bag is currently empty'}</p>
+          </div>
+        `;
+        subtotalEl.innerText = '0 SAR';
+        return;
+      }
+
+      let subtotal = 0;
+      container.innerHTML = cart.map((item, idx) => {
+        const itemTotal = item.price * item.qty;
+        subtotal += itemTotal;
+        const name = currentLang === 'ar' ? item.name_ar : item.name_en;
+
+        return `
+          <div class="bg-zahea-black/60 p-3.5 rounded-2xl border border-zahea-gold/20 flex items-center justify-between text-xs">
+            <div class="space-y-1">
+              <div class="font-bold text-white">${name}</div>
+              ${item.details ? `<div class="text-[10px] text-zahea-gold-light/80 max-w-[200px] truncate">${item.details}</div>` : ''}
+              <div class="text-zahea-gold font-semibold font-serif">${item.price} SAR × ${item.qty}</div>
+            </div>
+            <div class="flex items-center gap-2">
+              <button onclick="changeQty(${idx}, -1)" class="w-6 h-6 rounded-full bg-zahea-emerald/40 text-zahea-sand flex items-center justify-center hover:bg-zahea-gold hover:text-zahea-black transition-colors">-</button>
+              <span class="font-bold text-white text-xs">${item.qty}</span>
+              <button onclick="changeQty(${idx}, 1)" class="w-6 h-6 rounded-full bg-zahea-emerald/40 text-zahea-sand flex items-center justify-center hover:bg-zahea-gold hover:text-zahea-black transition-colors">+</button>
+            </div>
+          </div>
+        `;
+      }).join('');
+
+      subtotalEl.innerText = `${subtotal} SAR`;
+    }
+
+    function changeQty(index, delta) {
+      cart[index].qty += delta;
+      if (cart[index].qty <= 0) {
+        cart.splice(index, 1);
+      }
+      updateCartBadge();
+      renderCart();
+    }
+
+    // CHECKOUT REDIRECT
+    function checkoutViaWhatsApp() {
+      if (cart.length === 0) {
+        alert(currentLang === 'ar' ? 'يرجى إضافة منتجات إلى الحقيبة أولاً' : 'Please add items to your cart first.');
+        return;
+      }
+
+      const phone = "966500000000";
+      let message = currentLang === 'ar' ? `*طلب جديد من متجر زاها للتمور الفاخرة* 🌴✨\n\n` : `*New Order - Zahea Luxury Dates* 🌴✨\n\n`;
+
+      let total = 0;
+      cart.forEach((item, i) => {
+        const itemTotal = item.price * item.qty;
+        total += itemTotal;
+        const name = currentLang === 'ar' ? item.name_ar : item.name_en;
+        message += `${i+1}. ${name} (${item.qty}x) - ${itemTotal} SAR\n`;
+        if (item.details) {
+          message += `   └ ${item.details}\n`;
+        }
+      });
+
+      message += `\n*${currentLang === 'ar' ? 'الإجمالي' : 'Total'}:* ${total} SAR\n`;
+      message += currentLang === 'ar' ? `\nيرجى تأكيد التوافر وطرق الدفع والتوصيل.` : `\nPlease confirm availability, payment, and delivery timeline.`;
+
+      window.open(`https://wa.me/${phone}?text=${encodeURIComponent(message)}`, '_blank');
+    }
+  </script>
+</body>
+</html>
